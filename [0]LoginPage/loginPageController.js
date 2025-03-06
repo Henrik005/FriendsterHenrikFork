@@ -1,4 +1,5 @@
 function logIn(){
+    if(loginProcess = true){
     let loginUsername = model.input.login.username;
     let loginPass = model.input.login.password;
     let user = findUser(loginUsername, loginPass);
@@ -12,6 +13,8 @@ function logIn(){
         model.input.tempMessages.loginMessage = /*HTML*/ `
         Incorrect password`;
     }
+}
+else{location.reload}
 }
 
 function findUser(loginUsername, loginPass){
