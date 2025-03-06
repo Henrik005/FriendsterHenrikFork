@@ -1,7 +1,7 @@
 function updateFriendView() {
     console.log("selectedloggedin:", model.app.selectedUsers.loggedInUser)
     let friendUser = model.data.users[model.app.selectedUsers.friendUser];
-    profilePage = /*HTML*/ `
+    appDiv.innerHTML = `
     <h1>Friend</h1>
     ${createNavButtons()}
     <div class="outerContainer">
@@ -43,7 +43,6 @@ function updateFriendView() {
         </div>
     </div>
     </div>`;
-    appDiv.innerHTML = profilePage;
 }
 
 function showFriendImages(friendUser) {

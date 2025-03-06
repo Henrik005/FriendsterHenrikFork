@@ -1,6 +1,6 @@
 function updateClubView() {
     let selectedClub = model.data.footballTeams[model.app.selectedUsers.selectedClub];
-    clubPage = /*HTML*/ `
+    appDiv.innerHTML = `
     ${createNavButtons()}
     <div class="clubContainer">
         <h1 class="clubTitle">${selectedClub.teamName}</h1>
@@ -39,5 +39,4 @@ function updateClubView() {
         </div>
     </div>
     `;
-    appDiv.innerHTML = clubPage;
 }

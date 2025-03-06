@@ -1,7 +1,7 @@
 function updateProfileView() {
     console.log("friend:", model.app.selectedUsers.friendUser);
     let selectedUser = model.data.users[model.app.selectedUsers.loggedInUser];
-    profilePage = /*HTML*/ `
+    appDiv.innerHTML = `
     <h1>Profile</h1>
  <div class="searchContainer">
         ${searchBar()}
@@ -50,7 +50,6 @@ function updateProfileView() {
     </div>
     </div>
 ${createNavButtons()}`;
-    appDiv.innerHTML = profilePage;
 }
 
 
@@ -70,7 +69,6 @@ function showInterests(selectedUser) {
         <div>${selectedUser.interests[interestIndex]}</div>`;
     }
     return interestsHtml;
-
 }
 
 function showFriends(selectedUser) {

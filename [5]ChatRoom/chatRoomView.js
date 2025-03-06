@@ -2,7 +2,7 @@ function updateChatRoomView() {
     let currentUser = model.data.users[model.app.selectedUsers.loggedInUser];
     let friendUser = model.data.users[model.app.selectedUsers.friendUser];
 
-    chatRoom = /*HTML*/ `
+    appDiv.innerHTML = `
     <h1 class="chat-title">Chat Room</h1>
     <div class="chat-container">
         <div class="chat-user-info">
@@ -22,11 +22,10 @@ function updateChatRoomView() {
         </div>
     </div>
     <button onclick="goToProfile()">Back</button>`;
-    appDiv.innerHTML = chatRoom;
 }
 
 function sendMessage(currentUser, friendUser) {
-    time = new Date().toLocaleString();
+    let time = new Date().toLocaleString();
     let message = {
         sender: currentUser,
         recipient: friendUser,

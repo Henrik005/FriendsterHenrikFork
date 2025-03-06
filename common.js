@@ -1,6 +1,6 @@
 function changeView() {
-    currentPage = model.app.currentPage;
-    page = model.app.pages;
+    let currentPage = model.app.currentPage;
+    let page = model.app.pages;
     console.log("CurrentPage:", currentPage);
     if (currentPage === page[0]) {
         updateLoginView()
@@ -20,7 +20,6 @@ function changeView() {
     else if(currentPage === page[5]){
         updateChatRoomView()
     }
-   
 }
 
 function goToLogin() {
@@ -34,14 +33,13 @@ function goToFeed() {
 }
 
 function searchBar() {
-    let searchBar = /*HTML*/ `
+    return `
     <input type="text" oninput="model.input.search.searchInput=this.value.toLowerCase();"  placeholder="Search for user...">
     <button onclick="changeView()">Search</button>
     <input type="text" oninput="model.input.search.searchTeamsInput=this.value.toLowerCase();"  placeholder="Search for club, manager, league...">
     <button onclick="changeView()">Search for club info</button>
     ${selectCategory()}
     `;
-    return searchBar;
 }
 
 function displaySearchResults() {
@@ -128,10 +126,9 @@ return checkBoxHtml;
 }
 
 function createNavButtons(){
-    let navButtons = /*HTML*/ `
+    return `
     <button onclick="goToLogin()">LoginPage</button>
 <button onclick="goToFeed()">FeedPage</button>
 <button onclick="goToProfile()">ProfilePage</button>
 <button onclick="goToFriendPage()">FriendPage</button>`;
-return navButtons;
 }
