@@ -1,5 +1,5 @@
 function updateLoginView(){
-loginPage = /*HTML*/ `
+    appDiv.innerHTML = `
 <div>Login</div>
 <form>
 <input type="text" placeholder="Username..." oninput="model.input.login.username=this.value">
@@ -13,18 +13,11 @@ loginPage = /*HTML*/ `
 <button onclick="goToProfile()">ProfilePage</button>
 <button onclick="goToFriendPage()">FriendPage</button>
 `;
-
-appDiv.innerHTML = loginPage;
 }
-
-
-
-
-
 // ---------------regView--------------------------
 function updateRegView(){
-    inputReg = model.input.registerUser;
-    regView = /*HTML*/ `
+    let inputReg = model.input.registerUser;
+    appDiv.innerHTML = `
     <h1>RegView</h1>
     <input type="text" placeholder="Username..." oninput="inputReg.username=this.value">
     <form>
@@ -42,6 +35,4 @@ function updateRegView(){
     <input type="text" placeholder="Occupation" oninput="inputReg.occupation=this.value">
     <button onclick="registerUser()">Register user</button>
     `;
-
-    appDiv.innerHTML = regView;
 }

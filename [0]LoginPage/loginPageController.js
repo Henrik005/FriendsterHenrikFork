@@ -1,6 +1,6 @@
 function logIn(){
-    loginUsername = model.input.login.username;
-    loginPass = model.input.login.password;
+    let loginUsername = model.input.login.username;
+    let loginPass = model.input.login.password;
     let user = findUser(loginUsername, loginPass);
     console.log("user", user)
     if(user){
@@ -22,7 +22,7 @@ function findUser(loginUsername, loginPass){
 // -------------------Reg user controller-----------------------
 
 function registerUser() {
-    inputReg = model.input.registerUser;
+    let inputReg = model.input.registerUser;
     let foundUser = compareUser();
     if (inputReg.username === foundUser) {
         return;
@@ -50,7 +50,7 @@ function registerUser() {
             };
             model.data.users.push(newUser);
             console.log("new user:", newUser)
-
+            
         }
     } else {
         console.log("fyll inn alle ruter")
